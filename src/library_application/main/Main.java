@@ -15,6 +15,8 @@ public class Main {
 				MenuRender.render("====== 도서 관리 어플리케이션(회원) ======", UserMenu.values());
 			} else if (Session.isLibrary()) {
 				MenuRender.render("====== 도서 관리 어플리케이션(도서관) ======", LibraryMenu.values());
+			} else if (Session.isExit()) {
+				break;
 			}
 		}
 	}
