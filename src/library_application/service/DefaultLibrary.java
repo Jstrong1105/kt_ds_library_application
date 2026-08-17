@@ -164,7 +164,7 @@ public class DefaultLibrary implements Library {
 		this.users.stream()
 				  .filter(u -> u.getRentalBooks().stream()
 						  						 .map(seed -> this.getBook(seed))
-						  						 .filter(book -> book.getPubDate().isBefore(LocalDate.now().plusYears(10)))
+						  						 .filter(book -> book.getPubDate().isAfter(LocalDate.now().minusYears(10)))
 						  						 .map(book -> book.getRentalDate())
 						  					     .anyMatch(rentalDate -> rentalDate.isBefore(LocalDate.now().minusDays(5)))
 						  )
